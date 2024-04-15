@@ -1,16 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import './index.css';
+import Home from './Pages/Home/Home';
+import UpdateProfile from './Pages/UpdateProfile';
+import UserProfile from './Pages/UserProfile';
 import MainLayout from './Root/MainLayout';
 
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path: '/userProfile',
+        element: <UserProfile></UserProfile>
+      }
+
+    ]
   },
 ]);
 
@@ -18,6 +35,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
