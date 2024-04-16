@@ -1,28 +1,63 @@
+import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
+import image1 from '../assets/images/slide_1.jpg';
+import image2 from '../assets/images/slide_2.jpg';
+import image3 from '../assets/images/slide_3.jpg';
 
 const Banner = () => {
-    return (
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-        >
-          <SwiperSlide>
-            <img src="https://via.placeholder.com/600x400?text=Slide+1" alt="Slide 1" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://via.placeholder.com/600x400?text=Slide+2" alt="Slide 2" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://via.placeholder.com/600x400?text=Slide+3" alt="Slide 3" />
-          </SwiperSlide>
-          {/* Add more slides as needed */}
-        </Swiper>
-      );
+  useEffect(() => {
+
+  }, []);
+
+  return (
+    <div className="mt-6">
+      <Swiper
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        navigation
+      >
+        <SwiperSlide>
+          <div className="slide-content" style={{ position: 'relative' }}>
+            <img className='w-full rounded-xl lg:h-[800px]' src={image1} alt="Slide 1" />
+            <div className="text-overlay space-y-5" style={textOverlayStyle}>
+              <h2 className='text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
+              <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="slide-content" style={{ position: 'relative' }}>
+            <img className='w-full rounded-xl lg:h-[800px]' src={image2} alt="Slide 2" />
+            <div className="text-overlay space-y-5" style={textOverlayStyle}>
+              <h2 className='text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
+              <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="slide-content" style={{ position: 'relative' }}>
+            <img className='w-full rounded-xl lg:h-[800px]' src={image3} alt="Slide 3" />
+            <div className="text-overlay space-y-5" style={textOverlayStyle}>
+              <h2 className='text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
+              <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
+};
+
+const textOverlayStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  textAlign: 'center',
+  color: 'white',
+  zIndex: 1,
 };
 
 export default Banner;
