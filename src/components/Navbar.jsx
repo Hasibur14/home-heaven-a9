@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const links = <>
@@ -18,7 +18,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="bg-neutral-100 fixed z-10 w-full shadow-md">
+        <div className="bg-neutral-100 fixed z-10 w-full shadow-md ">
             <div className="navbar flex justify-between lg:mx-16 ">
                 <div className="navbar">
                     <div className="dropdown">
@@ -31,7 +31,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl gap-0 font-bold">Home<span className="text-green-400">Heaven</span></a>
+                    <a className="btn btn-ghost text-3xl gap-0 font-bold lg:ml-28">Home<span className="text-green-400">Heaven</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-[18px] font-bold">
@@ -42,18 +42,19 @@ const Navbar = () => {
                 </div>
                 <div className="navbar hidden lg:flex space-x-4 lg:ml-72">
                     <div className="dropdown dropdown-end justify-center items-center ">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                             <div className="w-10 rounded-full">
-                                <img  alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                             </div>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        {/* <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a>Logout</a></li>
-                        </ul>
-                        <button className="btn bg-green-500 text-white ">Log In</button>
+                        </ul> */}
                     </div>
+                   <Link to='/login'>
+                   <button className="btn bg-green-500 w-24 text-xl text-white ">Log In</button>
+                   </Link>
                 </div>
-               
             </div>
         </div>
     );

@@ -8,6 +8,8 @@ import UserProfile from './Pages/UserProfile';
 import MainLayout from './Root/MainLayout';
 import ErrorPage from './components/ErrorPage';
 import EstateDetails from './components/EstateDetails';
+import Login from './components/User/Login';
+import Register from './components/User/Register';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },

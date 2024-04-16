@@ -15,11 +15,11 @@ const EstateDetails = () => {
                         <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl  text-white">{estate_title}</h1>
                         <p className="mt-6 mb-8 text-xl text-white sm:mb-12 xl:max-w-3xl ">{description}</p>
                         <div className="flex flex-wrap justify-center  space-x-4">
-                            <p className='text-2xl text-white'>{price}</p>
+                            <p className='text-2xl text-white'>Price:             {price}</p>
                             <p className='badge badge-warning'>{status}</p>
                         </div>
                         <div className="flex flex-wraps space-x-4">
-                            <p className='text-2xl text-white'>{area}</p>
+                            <p className='text-2xl text-white'>Area:       {area}</p>
                             <p className='badge badge-info'>Residential</p>
                         </div>
                         <div className="flex items-center space-x-2">
