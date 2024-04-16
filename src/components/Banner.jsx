@@ -40,7 +40,7 @@ const Banner = () => {
           <div className="slide-content" style={{ position: 'relative' }}>
             <img className='w-full rounded-xl lg:h-[800px]' src={image3} alt="Slide 3" />
             <div className="text-overlay space-y-5" style={textOverlayStyle}>
-              <h2 className='text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
+              <h2 className='lg:text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
               <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
             </div>
           </div>

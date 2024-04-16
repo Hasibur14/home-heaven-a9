@@ -1,0 +1,112 @@
+    [
+      {
+        "id": 1,
+        "estate_title": "Luxury Villa with Ocean View",
+        "segment_name": "Single-family homes",
+        "description": "Stunning villa overlooking the ocean, offering luxurious amenities and breathtaking views.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Malibu, California",
+        "facilities": ["Infinity Pool", "Home Theater", "Gym", "Landscaped Gardens"],
+        "image": "https://i.ibb.co/Yk2RbLS/home-1.jpg"
+      },
+      {
+        "id": 2,
+        "estate_title": "Modern Loft in Downtown",
+        "segment_name": "Apartments",
+        "description": "Sleek and contemporary loft located in the heart of the city, offering urban living at its finest.",
+        "price": "$3,500/month",
+        "status": "rent",
+        "area": "1500 sq ft",
+        "location": "New York City, New York",
+        "facilities": ["Open Floor Plan", "Balcony", "Fitness Center", "Concierge Service"],
+        "image": "https://i.ibb.co/G7BC69Y/home-2.jpg"
+      },
+      {
+        "id": 3,
+        "estate_title": "Family Home in Suburbia",
+        "segment_name": "Single-family homes",
+        "description": "Charming family home nestled in a quiet suburban neighborhood, perfect for raising children.",
+        "price": "$450,000",
+        "status": "sale",
+        "area": "2500 sq ft",
+        "location": "Suburban Town, USA",
+        "facilities": ["Backyard", "Fireplace", "Spacious Kitchen", "Playroom"],
+        "image": "https://i.ibb.co/F87PLt7/home-3.jpg"
+      },
+      {
+        "id": 4,
+        "estate_title": "Cozy Cottage by the Lake",
+        "segment_name": "Vacation Rentals",
+        "description": "Quaint cottage situated by a serene lake, offering a peaceful retreat from the hustle and bustle.",
+        "price": "$200,000",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "Lakefront Village, Canada",
+        "facilities": ["Dock", "Fire Pit", "Garden", "Boat House"],
+        "image": "https://i.ibb.co/7xcCzSD/home-4.jpg"
+      },
+      {
+        "id": 5,
+        "estate_title": "Townhouse in Historic District",
+        "segment_name": "Townhouses",
+        "description": "Beautiful townhouse located in a historic district, blending modern convenience with classic charm.",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Charleston, South Carolina",
+        "facilities": ["Brick Patio", "High Ceilings", "Stainless Steel Appliances", "Walk-in Closets"],
+        "image": "https://i.ibb.co/wpWyTmp/home-5.jpg"
+      },
+      {
+        "id": 6,
+        "estate_title": "Student Housing Near Campus",
+        "segment_name": "Student Housing",
+        "description": "Convenient student housing just steps away from campus, featuring amenities tailored to student life.",
+        "price": "$800/month",
+        "status": "rent",
+        "area": "1000 sq ft",
+        "location": "University Town, USA",
+        "facilities": ["Study Lounge", "Shared Kitchen", "Laundry Facilities", "Bike Storage"],
+        "image": "https://i.ibb.co/RQmnsmK/home-6.jpg"
+      },
+      {
+        "id": 7,
+        "estate_title": "Senior Living Community",
+        "segment_name": "Senior Living Communities",
+        "description": "Active senior living community offering a range of services and activities for residents.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1800 sq ft",
+        "location": "Retirement City, Florida",
+        "facilities": ["Fitness Center", "Walking Trails", "Restaurant-style Dining", "Library"],
+        "image": "https://i.ibb.co/71Wrvfm/home-7.jpg"
+      },
+      {
+        "id": 8,
+        "estate_title": "Beachfront Condo with Panoramic Views",
+        "segment_name": "Apartments",
+        "description": "Spacious condo overlooking the beach, with floor-to-ceiling windows offering stunning panoramic views.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Miami Beach, Florida",
+        "facilities": ["Beach Access", "Swimming Pool", "Tennis Courts", "24/7 Security"],
+        "image": "https://i.ibb.co/M7RMRvX/home-8.jpg"
+      },
+      {
+        "id": 9,
+        "estate_title": "Mountain Retreat Cabin",
+        "segment_name": "Vacation Rentals",
+        "description": "Rustic cabin nestled in the mountains, providing a cozy retreat with access to outdoor adventures.",
+        "price": "$300/night",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "Mountain Village, Colorado",
+        "facilities": ["Wood-burning Fireplace", "Wrap-around Deck", "Hiking Trails Nearby", "Hot Tub"],
+        "image": "https://i.ibb.co/fdtB5v0/home-9.jpg"
+      }
+    ]
+  
+  
