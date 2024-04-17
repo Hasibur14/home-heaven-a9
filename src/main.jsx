@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from "react-router-dom"; // Import Route
+import { HelmetProvider } from 'react-helmet-async';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from './Pages/Contact';
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/contact',
-        element: <Contact></Contact>
+        element: <PrivetRoute><Contact></Contact></PrivetRoute>
       },
       {
         path: '/login',
@@ -63,7 +64,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
       <ToastContainer />
     </AuthProvider>
   </React.StrictMode>,

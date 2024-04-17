@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async';
 import { IoLocationOutline } from "react-icons/io5";
 import { useLoaderData } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const EstateDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title> Estate Details</title>
+            </Helmet>
             <section className='container mx-auto mt-3 mb-16'>
                 <div className="bg-green-600 rounded-xl">
                     <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900 space-y-4">

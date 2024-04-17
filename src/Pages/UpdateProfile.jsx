@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
     return (
         <div className="mt-16">
+             <Helmet>
+                <title>Update profile</title>
+            </Helmet>
             <section className="p-6 bg-base-200 container mx-auto rounded-lg shadow-lg">
                 <form noValidate="" action="" className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-lg ">

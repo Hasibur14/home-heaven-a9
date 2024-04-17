@@ -24,7 +24,7 @@ const Banner = () => {
             <img className='w-full rounded-xl lg:h-[800px]' src={image1} alt="Slide 1" />
             <div className="text-overlay space-y-5" style={textOverlayStyle}>
               <h2 className='text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
-              <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
+              <button className='btn bg-green-400 text-xl border-none text-white'>Explore now</button>
             </div>
           </div>
         </SwiperSlide>
@@ -33,7 +33,7 @@ const Banner = () => {
             <img className='w-full rounded-xl lg:h-[800px]' src={image2} alt="Slide 2" />
             <div className="text-overlay space-y-5" style={textOverlayStyle}>
               <h2 className='md:text-5xl lg:text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
-              <button className='btn bg-green-400 text-xl border-none text-white'>GET START</button>
+              <button className='btn bg-green-400 text-xl border-none text-white'>Explore now</button>
             </div>
           </div>
         </SwiperSlide>
@@ -42,7 +42,7 @@ const Banner = () => {
             <img className='w-full rounded-xl lg:h-[800px]' src={image3} alt="Slide 3" />
             <div className="text-overlay space-y-5" style={textOverlayStyle}>
               <h2 className='lg:text-7xl font-bold'>CHOSE YOUR DREAM DESTINATION</h2>
-              <Link to='/allProperties'>  <button className="btn bg-green-500 text-white mt-10">GET START</button></Link>
+              <Link to='/'> <button className="btn bg-green-500 text-white mt-10">Explore now</button></Link>
              
 
             </div>

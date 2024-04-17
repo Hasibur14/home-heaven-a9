@@ -1,16 +1,25 @@
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import app from "../../Firebase/firebase.config";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
 
-    const [showPassword, setShowPassword] = useState(false)
+    const auth = getAuth(app)
 
+    const [user, setUser] = useState(null)
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+
+    const [showPassword, setShowPassword] = useState(false)
 
     const { signIn } = useContext(AuthContext);
     const location = useLocation();
@@ -21,11 +30,11 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        
+
         signIn(email, password)
             .then(result => {
                 console.log(result)
-                
+
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -33,8 +42,41 @@ const Login = () => {
                 toast.error('Incorrect email or password. Please try again.');
             });
     };
+
+    // For Google 
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                const user = result.user;
+                console.log(user);
+                setUser(loggedInUser)
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.log('error', error.message)
+            })
+    }
+
+    // For Github:
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser)
+                setUser(loggedInUser);
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     return (
         <div>
+            <Helmet>
+                <title></title>
+            </Helmet>
             <div className="hero my-10">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-200 border-2">
                     <div>
@@ -75,8 +117,8 @@ const Login = () => {
                     <div className="text-center">
                         <h4>Login with</h4>
                         <div className="flex space-x-5 items-center justify-center">
-                            <span><FcGoogle /></span>
-                            <span><FaGithub /></span>
+                            <button onClick={handleGoogleSignIn}><FcGoogle /></button>
+                            <button onClick={handleGithubSignIn}><FaGithub /></button>
                         </div>
                     </div>
                     <p className="text-center mb-6"> Do not have an account? <Link to='/register' className="text-red-500 font-semibold">Register</Link></p>
