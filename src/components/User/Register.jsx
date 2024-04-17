@@ -7,14 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false)
 
     const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
-        const photo = form.get('photo'); // Retrieve photo URL
+        const image = form.get('photo'); // Retrieve photo URL
         const email = form.get('email');
         const password = form.get('password');
 
@@ -24,11 +24,15 @@ const Register = () => {
             return;
         }
 
-        // Create user with photo URL
-        createUser(email, password, name, photo)
+        // Create user and update profile
+        createUser(email, password, name, image)
             .then(result => {
                 console.log(result);
                 toast.success('User created successfully');
+                updateUserProfile(name,image)
+                .then(() => {
+
+                })
             })
             .catch(error => {
                 console.error(error);

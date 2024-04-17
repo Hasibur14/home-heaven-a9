@@ -1,10 +1,8 @@
 // AuthProvider.js
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { PropTypes } from 'prop-types';
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
-
-
 
 
 export const AuthContext = createContext(null);
@@ -19,8 +17,20 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
-     //user sign In.....
-     const signIn = (email, password) => {
+
+    //update user profile
+    const updateUserProfile = (name, image) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: image
+        }).then(() => {
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
+
+
+    //user sign In.....
+    const signIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -42,7 +52,7 @@ const AuthProvider = ({ children }) => {
         };
     }, []);
 
-    const authInfo = { user, createUser,signIn, logOut, loading };
+    const authInfo = { user, createUser, signIn, logOut, loading, updateUserProfile };
 
     return (
         <AuthContext.Provider value={authInfo}>

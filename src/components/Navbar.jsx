@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tippy";
 import { AuthContext } from "../Provider/AuthProvider";
+import userImage from '../assets/images/user.png';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -50,17 +51,19 @@ const Navbar = () => {
                 </div>
                 <div className="navbar hidden md:flex lg:flex space-x-4 lg:ml-72">
                     <div className="dropdown dropdown-end justify-center items-center">
-                        <Tooltip 
-                            title={user ? user.username : "Guest"} // Set the tooltip content to user's username if logged in, else to "Guest"
-                            position="left"
-                            trigger="mouseenter"
-                        >
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img alt="User Avatar" src="user image" />
+                        {user && (
+                            <Tooltip
+                                title={user && user.displayName ? user.displayName : "User name not found"}
+                                position="left"
+                                trigger="mouseenter"
+                            >
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img alt={user && user.displayName ? user.displayName : "User name not found"} src={user && user.photoURL ? user.photoURL : userImage} />
+                                    </div>
                                 </div>
-                            </div>
-                        </Tooltip>
+                            </Tooltip>
+                        )}
                     </div>
                     {user ?
                         <button onClick={handleSignOut} className="btn ml-4 text-white bg-green-400">LOG OUT</button> :
