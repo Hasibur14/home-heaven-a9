@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"; // Import Route
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home/Home';
 import UpdateProfile from './Pages/UpdateProfile';
 import UserProfile from './Pages/UserProfile';
+import AuthProvider from './Provider/AuthProvider';
+import PrivetRoute from './Provider/PrivetRoute';
 import MainLayout from './Root/MainLayout';
 import ErrorPage from './components/ErrorPage';
 import EstateDetails from './components/EstateDetails';
@@ -25,7 +29,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/estate/:id',
-        element: <EstateDetails />,
+        element: <PrivetRoute><EstateDetails></EstateDetails></PrivetRoute>,
+
         loader: ({ params }) =>
           fetch(`/data.json`)
             .then(res => res.json())
@@ -57,6 +62,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </AuthProvider>
   </React.StrictMode>,
 );

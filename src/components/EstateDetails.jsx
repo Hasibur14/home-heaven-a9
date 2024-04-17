@@ -9,7 +9,7 @@ const EstateDetails = () => {
 
     return (
         <div>
-            <section className='container mx-auto my-16'>
+            <section className='container mx-auto mt-3 mb-16'>
                 <div className="bg-green-600 rounded-xl">
                     <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900 space-y-4">
                         <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl  text-white">{estate_title}</h1>
