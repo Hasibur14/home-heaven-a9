@@ -1,5 +1,5 @@
-// AuthProvider.js
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+
+import { browserSessionPersistence, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, setPersistence, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { PropTypes } from 'prop-types';
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
@@ -43,13 +43,19 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setLoading(false);
-        });
-        return () => {
-            unSubscribe();
-        };
+        setPersistence(auth, browserSessionPersistence)
+            .then(() => {
+                const unSubscribe = onAuthStateChanged(auth, currentUser => {
+                    setUser(currentUser);
+                    setLoading(false);
+                });
+                return () => {
+                    unSubscribe();
+                };
+            })
+            .catch((error) => {
+                console.error("Error setting session persistence:", error);
+            });
     }, []);
 
     const authInfo = { user, createUser, signIn, logOut, loading, updateUserProfile };
