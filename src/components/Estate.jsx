@@ -7,7 +7,7 @@ const Estate = ({ property }) => {
     const { image, estate_title, location, status, price, area, id } = property;
 
     return (
-        <div className="mt-10 mb-16">
+        <div className="mt-10 mb-16 p-2 md:p-0">
             <div className="lg:w-[430px] rounded-lg shadow-md border-2 dark:bg-gray-50 dark:text-gray-800">
                 <img src={image} alt="" className="object-cover object-center p-4 w-full rounded-t-md h-72 dark:bg-gray-800" />
                 <div className="flex flex-col justify-between p-6 space-y-4">

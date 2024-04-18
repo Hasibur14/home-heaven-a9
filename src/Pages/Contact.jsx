@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
     return (
-        <div className="container mx-auto my-10">
+        <div className="container mx-auto my-10 p-2 lg:p-0">
              <Helmet>
                 <title>Contact</title>
             </Helmet>

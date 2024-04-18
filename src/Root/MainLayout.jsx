@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 const MainLayout = () => {
   return (
     <>
-       <div>
+       <div  className="font-OpenSans">
             <div className="h-20">
                <Navbar></Navbar>
             </div >

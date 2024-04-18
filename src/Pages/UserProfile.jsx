@@ -9,7 +9,7 @@ const UserProfile = () => {
 
 
     return (
-        <div className="lg:ml-[550px]">
+        <div className="lg:ml-[550px] p-2 md:p-0">
             <div className="justify-center items-center">
                 <Helmet>
                     <title>User Profile</title>

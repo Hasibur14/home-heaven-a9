@@ -31,7 +31,7 @@ const UpdateProfile = () => {
             <section className="p-4 bg-neutral-100 container mx-auto rounded-lg shadow-lg">
                 <form onSubmit={handleSubmit} className="container flex flex-col mx-auto space-y-12 bg-base-200">
                     <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-lg">
-                        <div className="space-y-2 col-span-full lg:col-span-1">
+                        <div className="space-y-2 col-span-full lg:col-span-1 lg:ml-16 lg:mt-16">
                             <p className="text-3xl font-semibold">Profile</p>
                             <p className="text-xl">Update Your Profile!</p>
                         </div>
@@ -70,14 +70,14 @@ const UpdateProfile = () => {
                                 ></textarea>
                             </div>
                             <div className="col-span-full">
-                                <label htmlFor="currentPhoto" className="text-sm">Current Profile</label>
+                                <label htmlFor="currentPhoto" className="text-sm font-bold">Current Profile</label>
                                 <div className="flex items-center space-x-2">
                                     <img src={user?.photoURL} alt="Profile" className="w-10 h-10 bg-gray-500 rounded-full" />
                                     <span>{user?.displayName}</span>
                                 </div>
                             </div>
                             <div className="form-control mt-6">
-                                <button type="submit" className="btn bg-green-400 text-white">Update Profile</button>
+                                <button type="submit" className="btn bg-green-400 text-white w-32">Update Profile</button>
                             </div>
                         </div>
 
