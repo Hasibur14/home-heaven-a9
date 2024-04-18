@@ -31,7 +31,7 @@ Provides functions like createUser, signIn, and logOut to handle user actions.
  ***npm package name:
 
 1. Animate.css,
-2. React-leaflet,
+2. AOS Package,
 3. Swiper slider
 
 
