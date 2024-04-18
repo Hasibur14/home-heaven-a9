@@ -14,7 +14,7 @@ const Register = () => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
-        const image = form.get('photo'); // Retrieve photo URL
+        const image = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
 
@@ -31,7 +31,7 @@ const Register = () => {
                 toast.success('User created successfully');
                 updateUserProfile(name,image)
                 .then(() => {
-
+                    toast.success('Update user profile successfully');
                 })
             })
             .catch(error => {

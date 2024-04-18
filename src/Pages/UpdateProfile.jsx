@@ -28,8 +28,8 @@ const UpdateProfile = () => {
             <Helmet>
                 <title>Update profile</title>
             </Helmet>
-            <section className="p-6 bg-base-200 container mx-auto rounded-lg shadow-lg">
-                <form onSubmit={handleSubmit} className="container flex flex-col mx-auto space-y-12">
+            <section className="p-4 bg-neutral-100 container mx-auto rounded-lg shadow-lg">
+                <form onSubmit={handleSubmit} className="container flex flex-col mx-auto space-y-12 bg-base-200">
                     <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-lg">
                         <div className="space-y-2 col-span-full lg:col-span-1">
                             <p className="text-3xl font-semibold">Profile</p>
@@ -65,15 +65,15 @@ const UpdateProfile = () => {
                                     id="bio"
                                     value={bio}
                                     onChange={(e) => setBio(e.target.value)}
-                                    placeholder="Bio"
+                                    placeholder="   Bio"
                                     className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-9 py-6"
                                 ></textarea>
                             </div>
                             <div className="col-span-full">
                                 <label htmlFor="currentPhoto" className="text-sm">Current Profile</label>
                                 <div className="flex items-center space-x-2">
-                                    <img src={user.photoURL} alt="Profile" className="w-10 h-10 bg-gray-500 rounded-full" />
-                                    <span>{user.displayName}</span>
+                                    <img src={user?.photoURL} alt="Profile" className="w-10 h-10 bg-gray-500 rounded-full" />
+                                    <span>{user?.displayName}</span>
                                 </div>
                             </div>
                             <div className="form-control mt-6">

@@ -17,7 +17,7 @@ const Contact = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
                                 </svg>
-                                <span>Dhaka, Bangladesh</span>
+                                <span> New York, USA</span>
                             </p>
                             <p className="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">
@@ -47,7 +47,7 @@ const Contact = () => {
                             <span className="mb-1">Message</span>
                             <textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-green-400  bg-white p-2"></textarea>
                         </label>
-                        <button type="button" className="self-center px-8 py-3 text-xl focus:ring hover:ring focus:ring-opacity-75 bg-green-400 text-white focus:ring-green-400 hover:ring-green-400 rounded-lg">Submit</button>
+                        <button type="button" className="self-center px-8 py-3 text-xl w-full focus:ring hover:ring focus:ring-opacity-75 bg-green-400 text-white focus:ring-green-400 hover:ring-green-400 rounded-lg">Submit</button>
                     </form>
                 </div>
             </section>

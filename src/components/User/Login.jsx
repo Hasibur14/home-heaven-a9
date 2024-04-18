@@ -34,7 +34,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result)
-
+                toast.success('User login successfully');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -51,10 +51,13 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setUser(loggedInUser)
+                toast.success('User login successfully');
                 navigate(location?.state ? location.state : '/');
+              
             })
             .catch(error => {
                 console.log('error', error.message)
+                toast.error(error.message);
             })
     }
 
@@ -65,10 +68,12 @@ const Login = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
                 setUser(loggedInUser);
+                toast.success('User login successfully');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                toast.error(error.message);
             })
     }
 
