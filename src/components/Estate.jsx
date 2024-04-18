@@ -1,14 +1,17 @@
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
-
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+AOS.init();
 
 const Estate = ({ property }) => {
     const { image, estate_title, location, status, price, area, id } = property;
 
     return (
-        <div className="mt-10 mb-16 p-2 md:p-0">
-            <div className="lg:w-[430px] rounded-lg shadow-md border-2 dark:bg-gray-50 dark:text-gray-800">
+        <div className="mt-10 mb-16 p-2 md:p-0 " data-aos="zoom-in-up">
+            <div className=" animate__animated  animate__backInUp 	 lg:w-[450px] rounded-lg shadow-md border-2 dark:bg-gray-50 dark:text-gray-800">
                 <img src={image} alt="" className="object-cover object-center p-4 w-full rounded-t-md h-72 dark:bg-gray-800" />
                 <div className="flex flex-col justify-between p-6 space-y-4">
                     <div className="flex justify-between">
@@ -28,8 +31,8 @@ const Estate = ({ property }) => {
                         </div>
                     </div>
                     <Link to={`estate/${id}`}>
-    <button className='flex btn items-center bg-green-400 text-white justify-center w-full p-3 font-semibold tracking-wide rounded-md'>Details</button>
-</Link>
+                        <button className='flex btn items-center bg-green-400 text-white justify-center w-full p-3 font-semibold tracking-wide rounded-md'>Details</button>
+                    </Link>
                 </div>
             </div>
         </div >
